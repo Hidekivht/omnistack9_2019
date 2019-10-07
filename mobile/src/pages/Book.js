@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, AsyncStorage, StyleSheet, SafeAreaView, Text, TouchableOpacity, TextInput } from 'react-native';
+import { View, Alert, AsyncStorage, StyleSheet, SafeAreaView, Text, TouchableOpacity, TextInput } from 'react-native';
 
 import api from '../services/api';
 
@@ -10,7 +10,7 @@ export default function Book({ navigation }) {
   async function handleSubmit(){
     const user_id = AsyncStorage.getItem('user');
 
-    await api.post(`/spots/${id}/booking`, { 
+    await api.post(`/spots/${id}/bookings`, { 
       date 
     }, {
       headers: {
